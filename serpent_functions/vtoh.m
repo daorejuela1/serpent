@@ -1,9 +1,15 @@
-function [h] = vtoh (vector)
+function [hex] = vtoh (vector)
+% VTOH  Convert from hex to vect
+%   Inputs:
+%   vector: Vector to be converted
+%
+%   Outputs:
+%   h: hex representation of number
 vector = mat2str(vector);
 size = length(vector);
-pasar = vector(2:(size-1));
-pasar=strrep(pasar,' ','');
-bin_str = pasar;
+pass = vector(2:(size-1));
+pass=strrep(pass,' ','');
+bin_str = pass;
 i = length(bin_str);
 n = ceil(i/4); 
 
@@ -15,4 +21,4 @@ for g = n : -1 : 1
         hex_str(g) = vectortohex(bin_str(1 : i));
     end
 end
-h =hex_str;
+hex =hex_str;
